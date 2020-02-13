@@ -16,7 +16,7 @@ class ReviewCrawler():
         options.add_argument("--disable-notifications")
         # options.add_argument("--headless")
 
-        driver = webdriver.Chrome("chromedriver", options=options)
+        driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
         # driver = webdriver.PhantomJS("C:\Program Files (x86)\Google\Chrome\phantomjs")
         driver.get(url)
 
