@@ -17,7 +17,7 @@ class ReviewCrawler():
         # options.add_argument("--headless")
 
         #driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
-        driver = webdriver.Chrome()
+        driver = webdriver.Firefox()
         # driver = webdriver.PhantomJS("C:\Program Files (x86)\Google\Chrome\phantomjs")
         driver.get(url)
 
