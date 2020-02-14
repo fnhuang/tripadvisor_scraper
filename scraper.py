@@ -14,15 +14,19 @@ class ReviewCrawler():
         options.add_argument('--ignore-certificate-errors')
         options.add_argument("--test-type")
         options.add_argument("--disable-notifications")
-        #try solving devtoolactiveport problem
+
+        #when in linux vm add these lines
+        #solves devtoolactiveport problem
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
         options.add_argument('--disable-dev-shm-usage')
-        # options.add_argument("--headless")
 
+        #using windows local
+        #driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\chromedriver", options=options)
+        #using linux vm
         driver = webdriver.Chrome("/usr/bin/chromedriver", options=options)
-        #driver = webdriver.Firefox()
-        # driver = webdriver.PhantomJS("C:\Program Files (x86)\Google\Chrome\phantomjs")
+
+        #driver = webdriver.PhantomJS("C:\Program Files (x86)\Google\Chrome\phantomjs")
         driver.get(url)
 
 
