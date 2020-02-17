@@ -117,6 +117,9 @@ class ReviewCrawler():
 
         #print(self.pages)
 
-all_attractions_url = "https://www.tripadvisor.com/Attractions-g294265-Activities-a_allAttractions.true-Singapore.html"
-rc = ReviewCrawler(0, all_attractions_url, 5)
-rc.crawl()
+if __name__ == "__main__":
+    vm = int(sys.argv[1])
+    sleep = int(sys.argv[2])
+    all_attractions_url = "https://www.tripadvisor.com/Attractions-g294265-Activities-a_allAttractions.true-Singapore.html"
+    rc = ReviewCrawler(vm, all_attractions_url, sleep)
+    rc.crawl()
