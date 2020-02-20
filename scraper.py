@@ -66,14 +66,16 @@ class ReviewCrawler():
 
 
     def parse(self, response):
-        #content = open("all_attractions_page1.html", "r", encoding="utf8").read()
+        #response = open("all_attractions_page29.html", "r", encoding="utf8").read()
 
         soup = BeautifulSoup(response, 'html.parser')
-        #print(soup.prettify()) #for easy reading
+        #w = open("prettify2.html","w",encoding="utf8")
+        #w.write(soup.prettify()) #for easy reading
+        #w.close()
 
         #get attraction name, and url
         file_name = 'attractive_places.csv'
-        fieldnames = ['name', 'url']
+        fieldnames = ['name', 'url', 'reviews','rating','tag']
         if os.path.isfile(file_name):
             attractive_writer = open(file_name, 'a', newline="")
             attractive_csv = csv.writer(attractive_writer)
@@ -85,10 +87,28 @@ class ReviewCrawler():
         # get attraction name, and url
         divs = soup.find_all("div", {"class": "tracking_attraction_title"})
         for div in divs:
-            a = div.findChildren("a",href=True,recursive=False)[0]
+            a = div.findChild("a",href=True,recursive=False)
             attraction_name = a.getText()
             attraction_url = self.home + a["href"]
-            attractive_csv.writerow([attraction_name, attraction_url])
+
+            rs_rating = div.parent.findChild("div", {"class": "listing_rating"}).\
+                findChild("div", {"class": "rs rating"})
+            num_review = 0
+            rating = 0
+            if rs_rating != None:
+                num_review_href = rs_rating.findChild("span", {"class": "more"}).\
+                    findChild("a", href=True)
+                num_review = int(num_review_href.getText().replace(",","").replace("reviews",""))
+
+                bubble_rating = rs_rating.findChildren("span")[0]
+                rating = float(bubble_rating["alt"].replace("of 5 bubbles",""))
+
+            tag_line = div.parent.findChild("div",{"class": "tag_line"} )
+            tag = tag_line.findChild("span").getText()
+
+
+
+            attractive_csv.writerow([attraction_name, attraction_url, num_review, rating, tag])
 
             #file_size = os.stat(file_name).st_size
 
@@ -120,6 +140,12 @@ class ReviewCrawler():
 if __name__ == "__main__":
     vm = int(sys.argv[1])
     sleep = int(sys.argv[2])
+    #vm = 0
+    #sleep = 5
     all_attractions_url = "https://www.tripadvisor.com/Attractions-g294265-Activities-a_allAttractions.true-Singapore.html"
     rc = ReviewCrawler(vm, all_attractions_url, sleep)
     rc.crawl()
+    #rc.parse("test")
+    #next get list of links, but the number of reviews should be
+    #at least 10 reviews
+    #crawl the tags "theatres, shopping malls, etc?"
