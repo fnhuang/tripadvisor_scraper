@@ -105,8 +105,8 @@ class ReviewCrawler():
 
             tag = ""
             tag_line = div.parent.findChild("div",{"class": "tag_line"} )
-            tag_span = tag_line.findChild("span")\
-            if tag_span != "None":
+            tag_span = tag_line.findChild("span")
+            if tag_span != None:
                 tag = tag_span.getText()
 
 
