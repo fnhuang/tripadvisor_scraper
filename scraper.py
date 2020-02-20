@@ -103,8 +103,10 @@ class ReviewCrawler():
                 bubble_rating = rs_rating.findChildren("span")[0]
                 rating = float(bubble_rating["alt"].replace("of 5 bubbles",""))
 
+            tag = ""
             tag_line = div.parent.findChild("div",{"class": "tag_line"} )
-            tag = tag_line.findChild("span").getText()
+            if tag_line != None:
+                tag = tag_line.findChild("span").getText()
 
 
 
