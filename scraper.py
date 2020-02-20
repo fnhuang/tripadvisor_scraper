@@ -98,7 +98,8 @@ class ReviewCrawler():
             if rs_rating != None:
                 num_review_href = rs_rating.findChild("span", {"class": "more"}).\
                     findChild("a", href=True)
-                num_review = int(num_review_href.getText().replace(",","").replace("reviews",""))
+                num_review = int(num_review_href.getText().replace(",","").
+                                 replace("reviews","").replace("review",""))
 
                 bubble_rating = rs_rating.findChildren("span")[0]
                 rating = float(bubble_rating["alt"].replace("of 5 bubbles",""))
