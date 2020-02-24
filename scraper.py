@@ -63,7 +63,16 @@ class ReviewCrawler():
                       (finish_getting_data - start_time).seconds, "seconds")
                 time.sleep(10)
                 self.pageNum += 1
+        else:
+            driver.get(self.url)
+            response = driver.page_source
 
+            # dump the file
+            name_array = self.url[self.url.rindex("/"):].split("-")
+            fname = name_array[len(name_array)-2].lower() + ".html"
+            writer = open(fname, "w", encoding="utf8")
+            writer.write(response)
+            writer.close()
 
     def parse(self, response):
         #response = open("all_attractions_page29.html", "r", encoding="utf8").read()
@@ -144,12 +153,8 @@ class ReviewCrawler():
 if __name__ == "__main__":
     vm = int(sys.argv[1])
     sleep = int(sys.argv[2])
-    #vm = 0
-    #sleep = 5
-    all_attractions_url = "https://www.tripadvisor.com/Attractions-g294265-Activities-a_allAttractions.true-Singapore.html"
-    rc = ReviewCrawler(vm, all_attractions_url, sleep)
+    #all_attractions_url = "https://www.tripadvisor.com/Attractions-g294265-Activities-a_allAttractions.true-Singapore.html"
+    national_gallery_url = "https://www.tripadvisor.com/Attraction_Review-g294265-d8077179-Reviews-National_Gallery_Singapore-Singapore.html"
+    rc = ReviewCrawler(vm, national_gallery_url, sleep)
     rc.crawl()
-    #rc.parse("test")
-    #next get list of links, but the number of reviews should be
-    #at least 10 reviews
-    #crawl the tags "theatres, shopping malls, etc?"
+
