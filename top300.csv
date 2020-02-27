@@ -37,12 +37,12 @@ number,name,url,reviews,rating,tag,done
 36,VivoCity,https://www.tripadvisor.com/Attraction_Review-g294265-d634131-Reviews-VivoCity-Singapore.html,1427,4,Shopping Malls,0
 37,Marina Bay Sands Casino,https://www.tripadvisor.com/Attraction_Review-g294265-d1062119-Reviews-Marina_Bay_Sands_Casino-Singapore.html,1293,4,Casinos,0
 38,National Gallery Singapore,https://www.tripadvisor.com/Attraction_Review-g294265-d8077179-Reviews-National_Gallery_Singapore-Singapore.html,1250,4.5,Art Galleries,0
-39,Boat Quay,https://www.tripadvisor.com/Attraction_Review-g294265-d317397-Reviews-Boat_Quay-Singapore.html,1236,4,Piers & Boardwalks,0
-40,Peranakan Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1491151-Reviews-Peranakan_Museum-Singapore.html,1233,4.5,Speciality Museums,0
-41,East Coast Park,https://www.tripadvisor.com/Attraction_Review-g294265-d317426-Reviews-East_Coast_Park-Singapore.html,1192,4.5,Parks,0
-42,The Southern Ridges,https://www.tripadvisor.com/Attraction_Review-g294265-d1523862-Reviews-The_Southern_Ridges-Singapore.html,1154,4.5,Scenic Walking Areas,0
-43,Chinatown Heritage Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d324540-Reviews-Chinatown_Heritage_Centre-Singapore.html,1087,4.5,Speciality Museums,0
-44,Esplanade - Theatres on the Bay,https://www.tripadvisor.com.sg/Attraction_Review-g294265-d324752-Reviews-Esplanade_Theatres_on_the_Bay-Singapore.html,1072,4.5,Theatres,0
+39,Boat Quay,https://www.tripadvisor.com/Attraction_Review-g294265-d317397-Reviews-Boat_Quay-Singapore.html,1236,4,Piers & Boardwalks,1
+40,Peranakan Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1491151-Reviews-Peranakan_Museum-Singapore.html,1233,4.5,Speciality Museums,1
+41,East Coast Park,https://www.tripadvisor.com/Attraction_Review-g294265-d317426-Reviews-East_Coast_Park-Singapore.html,1192,4.5,Parks,1
+42,The Southern Ridges,https://www.tripadvisor.com/Attraction_Review-g294265-d1523862-Reviews-The_Southern_Ridges-Singapore.html,1154,4.5,Scenic Walking Areas,1
+43,Chinatown Heritage Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d324540-Reviews-Chinatown_Heritage_Centre-Singapore.html,1087,4.5,Speciality Museums,1
+44,Esplanade - Theatres on the Bay,https://www.tripadvisor.com/Attraction_Review-g294265-d324752-Reviews-Esplanade_Theatres_on_the_Bay-Singapore.html,1072,4.5,Theatres,0
 45,Sultan Mosque,https://www.tripadvisor.com/Attraction_Review-g294265-d317468-Reviews-Sultan_Mosque-Singapore.html,1052,4,Sacred & Religious Sites,0
 46,Jewel Changi Airport,https://www.tripadvisor.com/Attraction_Review-g294265-d17237163-Reviews-Jewel_Changi_Airport-Singapore.html,1044,4.5,Shopping Malls,0
 47,Fort Canning Park,https://www.tripadvisor.com/Attraction_Review-g294265-d324755-Reviews-Fort_Canning_Park-Singapore.html,1044,4,Parks,0
