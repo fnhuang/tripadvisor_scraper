@@ -376,7 +376,7 @@ if __name__ == "__main__":
     vm = int(sys.argv[3])
     sleep = int(sys.argv[4])
 
-    for number in urls.keys():
+    for number in range(start_crawl, end_crawl):
         url = urls[number]
         start_time = datetime.datetime.now()
         rc = ReviewCrawler(vm, url, sleep)
