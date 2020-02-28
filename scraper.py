@@ -307,10 +307,13 @@ class ReviewCrawler():
             redux = pageManifest["redux"]["api"]["responses"]
             reg = re.compile("\/data\/1\.0\/location\/[0-9]+")
             to_find = re.findall(reg, json.dumps(redux))[0]
-            location_data = redux[to_find]["data"]
-            latitude = location_data["latitude"]
-            longitude = location_data["longitude"]
-            values.append(latitude); values.append(longitude)
+            if to_find in redux.keys():
+                location_data = redux[to_find]["data"]
+                latitude = location_data["latitude"]
+                longitude = location_data["longitude"]
+                values.append(latitude); values.append(longitude)
+            else:
+                values.append("NA"); values.append("NA");
 
             for i in range(1,6):
                 id = "ReviewRatingFilter_" + str(i)
