@@ -232,7 +232,10 @@ class ReviewCrawler():
 
         self.lastPage = max(all_numbers)
         all_numbers.remove(self.lastPage)
-        max_b4_last = max(all_numbers)
+        if len(all_numbers) > 0:
+            max_b4_last = max(all_numbers) #number before dot-dot-dot
+        else: #pages < 3
+            max_b4_last = self.lastPage
 
         frame = self.pages[2]
         reg = re.compile("or[0-9]+")
