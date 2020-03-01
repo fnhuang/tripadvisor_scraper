@@ -232,16 +232,13 @@ class ReviewCrawler():
 
         self.lastPage = max(all_numbers)
         all_numbers.remove(self.lastPage)
-        if len(all_numbers) > 0:
+        if len(all_numbers) > 0: #pages >=3
             max_b4_last = max(all_numbers) #number before dot-dot-dot
-        else: #pages < 3
-            max_b4_last = self.lastPage
-
-        frame = self.pages[2]
-        reg = re.compile("or[0-9]+")
-        for this_page in range(max_b4_last, self.lastPage + 1):
-            to_replace = re.findall(reg,frame)[0]
-            self.pages[this_page] = frame.replace(to_replace, "or" + str((this_page - 1) * 5))
+            frame = self.pages[2]
+            reg = re.compile("or[0-9]+")
+            for this_page in range(max_b4_last, self.lastPage + 1):
+                to_replace = re.findall(reg,frame)[0]
+                self.pages[this_page] = frame.replace(to_replace, "or" + str((this_page - 1) * 5))
 
 
         #print(self.pages)
