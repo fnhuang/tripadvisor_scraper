@@ -309,9 +309,12 @@ class ReviewCrawler():
             to_find = re.findall(reg, json.dumps(redux))[0]
             if to_find in redux.keys():
                 location_data = redux[to_find]["data"]
-                latitude = location_data["latitude"]
-                longitude = location_data["longitude"]
-                values.append(latitude); values.append(longitude)
+                try:
+                    latitude = location_data["latitude"]
+                    longitude = location_data["longitude"]
+                    values.append(latitude); values.append(longitude)
+                except:
+                    values.append("NA"); values.append("NA");
             else:
                 values.append("NA"); values.append("NA");
 

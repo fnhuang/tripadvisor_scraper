@@ -1,7 +1,7 @@
 number,name,url,reviews,rating,tag,done
 1,Gardens by the Bay,https://www.tripadvisor.com/Attraction_Review-g294265-d2149128-Reviews-Gardens_by_the_Bay-Singapore.html,59002,4.5,Gardens,1
 2,Singapore Zoo,https://www.tripadvisor.com/Attraction_Review-g294265-d324542-Reviews-Singapore_Zoo-Singapore.html,22191,4.5,Zoos,1
-3,Singapore Botanic Gardens,https://www.tripadvisor.com/Attraction_Review-g294265-d310900-Reviews-Singapore_Botanic_Gardens-Singapore.html,19608,4.5,Gardens,0
+3,Singapore Botanic Gardens,https://www.tripadvisor.com/Attraction_Review-g294265-d310900-Reviews-Singapore_Botanic_Gardens-Singapore.html,19608,4.5,Gardens,1
 4,Singapore Flyer,https://www.tripadvisor.com/Attraction_Review-g294265-d678639-Reviews-Singapore_Flyer-Singapore.html,17298,4.5,Observation Decks & Towers,0
 5,Sands Skypark Observation Deck,https://www.tripadvisor.com/Attraction_Review-g294265-d1837767-Reviews-Sands_Skypark_Observation_Deck-Singapore.html,16787,4.5,Points of Interest & Landmarks,0
 6,Cloud Forest,https://www.tripadvisor.com/Attraction_Review-g294265-d4400781-Reviews-Cloud_Forest-Singapore.html,14773,4.5,Gardens,0
@@ -142,27 +142,27 @@ number,name,url,reviews,rating,tag,done
 141,Kusu Island,https://www.tripadvisor.com/Attraction_Review-g294265-d317438-Reviews-Kusu_Island-Singapore.html,104,4,Islands,1
 142,Geylang Serai New Market,https://www.tripadvisor.com/Attraction_Review-g294265-d317432-Reviews-Geylang_Serai_New_Market-Singapore.html,104,4,Flea & Street Markets,1
 143,Central Fire Station,https://www.tripadvisor.com/Attraction_Review-g294265-d591532-Reviews-Central_Fire_Station-Singapore.html,104,4,Architectural Buildings,1
-144,Kong Meng San Phor Kark See Temple,https://www.tripadvisor.com/Attraction_Review-g294265-d386876-Reviews-Kong_Meng_San_Phor_Kark_See_Temple-Singapore.html,101,4.5,Sacred & Religious Sites,0
-145,Joo Chiat/Katong,https://www.tripadvisor.com/Attraction_Review-g294265-d2344138-Reviews-Joo_Chiat_Katong-Singapore.html,100,4,Neighbourhoods,0
-146,Tiong Bahru Estate,https://www.tripadvisor.com/Attraction_Review-g294265-d2371793-Reviews-Tiong_Bahru_Estate-Singapore.html,99,4,Architectural Buildings,0
-147,Nex,https://www.tripadvisor.com/Attraction_Review-g294265-d4355205-Reviews-Nex-Singapore.html,97,4,Shopping Malls,0
-148,Sri Krishnan Temple,https://www.tripadvisor.com/Attraction_Review-g294265-d1888871-Reviews-Sri_Krishnan_Temple-Singapore.html,97,4,Sacred & Religious Sites,0
-149,Victoria Theatre & Victoria Concert Hall,https://www.tripadvisor.com/Attraction_Review-g294265-d446443-Reviews-Victoria_Theatre_Victoria_Concert_Hall-Singapore.html,97,4,Theatres,0
-150,Istana,https://www.tripadvisor.com/Attraction_Review-g294265-d446430-Reviews-Istana-Singapore.html,97,4,Government Buildings,0
-151,Faber Peak,https://www.tripadvisor.com/Attraction_Review-g294265-d7221059-Reviews-Faber_Peak-Singapore.html,96,4,Tramways,0
-152,The Live Turtle and Tortoise Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1138048-Reviews-The_Live_Turtle_and_Tortoise_Museum-Singapore.html,96,3,Speciality Museums,0
-153,Jamae Mosque,https://www.tripadvisor.com/Attraction_Review-g294265-d379355-Reviews-Jamae_Mosque-Singapore.html,95,3.5,Sacred & Religious Sites,0
-154,Night Safari Wallaby Trail,https://www.tripadvisor.com/Attraction_Review-g294265-d3459631-Reviews-Night_Safari_Wallaby_Trail-Singapore.html,95,4,Hiking Trails,0
-155,People of the River,https://www.tripadvisor.com/Attraction_Review-g294265-d2341762-Reviews-People_of_the_River-Singapore.html,92,4,Historic Walking Areas,0
-156,Pagoda Street,https://www.tripadvisor.com/Attraction_Review-g294265-d8399607-Reviews-Pagoda_Street-Singapore.html,91,4,Points of Interest & Landmarks,0
-157,Reflections at Bukit Chandu,https://www.tripadvisor.com/Attraction_Review-g294265-d2403126-Reviews-Reflections_at_Bukit_Chandu-Singapore.html,89,4.5,Speciality Museums,0
-158,Jacob Ballas Children's Garden,https://www.tripadvisor.com/Attraction_Review-g294265-d4355521-Reviews-Jacob_Ballas_Children_s_Garden-Singapore.html,89,4.5,Gardens,0
-159,Tanjong Pagar,https://www.tripadvisor.com/Attraction_Review-g294265-d3915753-Reviews-Tanjong_Pagar-Singapore.html,86,4,Neighbourhoods,0
-160,Orchard Gateway,https://www.tripadvisor.com/Attraction_Review-g294265-d8565683-Reviews-Orchard_Gateway-Singapore.html,83,3.5,Shopping Malls,0
-161,Sun Yat Sen Nanyang Memorial Hall,https://www.tripadvisor.com/Attraction_Review-g294265-d338367-Reviews-Sun_Yat_Sen_Nanyang_Memorial_Hall-Singapore.html,82,4.5,Historic Sites,0
-162,Singapore Discovery Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d446421-Reviews-Singapore_Discovery_Centre-Singapore.html,80,3.5,Speciality Museums,0
-163,West Coast Park,https://www.tripadvisor.com/Attraction_Review-g294265-d2587912-Reviews-West_Coast_Park-Singapore.html,80,4.5,Parks,0
-164,Sago Street (Street Of The Dead),https://www.tripadvisor.com/Attraction_Review-g294265-d317466-Reviews-Sago_Street_Street_Of_The_Dead-Singapore.html,79,3.5,Points of Interest & Landmarks,0
+144,Kong Meng San Phor Kark See Temple,https://www.tripadvisor.com/Attraction_Review-g294265-d386876-Reviews-Kong_Meng_San_Phor_Kark_See_Temple-Singapore.html,101,4.5,Sacred & Religious Sites,1
+145,Joo Chiat/Katong,https://www.tripadvisor.com/Attraction_Review-g294265-d2344138-Reviews-Joo_Chiat_Katong-Singapore.html,100,4,Neighbourhoods,1
+146,Tiong Bahru Estate,https://www.tripadvisor.com/Attraction_Review-g294265-d2371793-Reviews-Tiong_Bahru_Estate-Singapore.html,99,4,Architectural Buildings,1
+147,Nex,https://www.tripadvisor.com/Attraction_Review-g294265-d4355205-Reviews-Nex-Singapore.html,97,4,Shopping Malls,1
+148,Sri Krishnan Temple,https://www.tripadvisor.com/Attraction_Review-g294265-d1888871-Reviews-Sri_Krishnan_Temple-Singapore.html,97,4,Sacred & Religious Sites,1
+149,Victoria Theatre & Victoria Concert Hall,https://www.tripadvisor.com/Attraction_Review-g294265-d446443-Reviews-Victoria_Theatre_Victoria_Concert_Hall-Singapore.html,97,4,Theatres,1
+150,Istana,https://www.tripadvisor.com/Attraction_Review-g294265-d446430-Reviews-Istana-Singapore.html,97,4,Government Buildings,1
+151,Faber Peak,https://www.tripadvisor.com/Attraction_Review-g294265-d7221059-Reviews-Faber_Peak-Singapore.html,96,4,Tramways,1
+152,The Live Turtle and Tortoise Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1138048-Reviews-The_Live_Turtle_and_Tortoise_Museum-Singapore.html,96,3,Speciality Museums,1
+153,Jamae Mosque,https://www.tripadvisor.com/Attraction_Review-g294265-d379355-Reviews-Jamae_Mosque-Singapore.html,95,3.5,Sacred & Religious Sites,1
+154,Night Safari Wallaby Trail,https://www.tripadvisor.com/Attraction_Review-g294265-d3459631-Reviews-Night_Safari_Wallaby_Trail-Singapore.html,95,4,Hiking Trails,1
+155,People of the River,https://www.tripadvisor.com/Attraction_Review-g294265-d2341762-Reviews-People_of_the_River-Singapore.html,92,4,Historic Walking Areas,1
+156,Pagoda Street,https://www.tripadvisor.com/Attraction_Review-g294265-d8399607-Reviews-Pagoda_Street-Singapore.html,91,4,Points of Interest & Landmarks,1
+157,Reflections at Bukit Chandu,https://www.tripadvisor.com/Attraction_Review-g294265-d2403126-Reviews-Reflections_at_Bukit_Chandu-Singapore.html,89,4.5,Speciality Museums,1
+158,Jacob Ballas Children's Garden,https://www.tripadvisor.com/Attraction_Review-g294265-d4355521-Reviews-Jacob_Ballas_Children_s_Garden-Singapore.html,89,4.5,Gardens,1
+159,Tanjong Pagar,https://www.tripadvisor.com/Attraction_Review-g294265-d3915753-Reviews-Tanjong_Pagar-Singapore.html,86,4,Neighbourhoods,1
+160,Orchard Gateway,https://www.tripadvisor.com/Attraction_Review-g294265-d8565683-Reviews-Orchard_Gateway-Singapore.html,83,3.5,Shopping Malls,1
+161,Sun Yat Sen Nanyang Memorial Hall,https://www.tripadvisor.com/Attraction_Review-g294265-d338367-Reviews-Sun_Yat_Sen_Nanyang_Memorial_Hall-Singapore.html,82,4.5,Historic Sites,1
+162,Singapore Discovery Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d446421-Reviews-Singapore_Discovery_Centre-Singapore.html,80,3.5,Speciality Museums,1
+163,West Coast Park,https://www.tripadvisor.com/Attraction_Review-g294265-d2587912-Reviews-West_Coast_Park-Singapore.html,80,4.5,Parks,1
+164,Sago Street (Street Of The Dead),https://www.tripadvisor.com/Attraction_Review-g294265-d317466-Reviews-Sago_Street_Street_Of_The_Dead-Singapore.html,79,3.5,Points of Interest & Landmarks,1
 165,Raffles Place Skyscraper Buildings,https://www.tripadvisor.com/Attraction_Review-g294265-d8399830-Reviews-Raffles_Place_Skyscraper_Buildings-Singapore.html,77,4,Points of Interest & Landmarks,0
 166,Tekka Temporary Market,https://www.tripadvisor.com/Attraction_Review-g294265-d1516752-Reviews-Tekka_Temporary_Market-Singapore.html,77,4,Flea & Street Markets,0
 167,Jubilee Bridge,https://www.tripadvisor.com/Attraction_Review-g294265-d11843969-Reviews-Jubilee_Bridge-Singapore.html,77,4,Bridges,0
