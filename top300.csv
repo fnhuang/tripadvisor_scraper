@@ -2,12 +2,12 @@ number,name,url,reviews,rating,tag,done
 1,Gardens by the Bay,https://www.tripadvisor.com/Attraction_Review-g294265-d2149128-Reviews-Gardens_by_the_Bay-Singapore.html,59002,4.5,Gardens,1
 2,Singapore Zoo,https://www.tripadvisor.com/Attraction_Review-g294265-d324542-Reviews-Singapore_Zoo-Singapore.html,22191,4.5,Zoos,1
 3,Singapore Botanic Gardens,https://www.tripadvisor.com/Attraction_Review-g294265-d310900-Reviews-Singapore_Botanic_Gardens-Singapore.html,19608,4.5,Gardens,1
-4,Singapore Flyer,https://www.tripadvisor.com/Attraction_Review-g294265-d678639-Reviews-Singapore_Flyer-Singapore.html,17298,4.5,Observation Decks & Towers,0
-5,Sands Skypark Observation Deck,https://www.tripadvisor.com/Attraction_Review-g294265-d1837767-Reviews-Sands_Skypark_Observation_Deck-Singapore.html,16787,4.5,Points of Interest & Landmarks,0
-6,Cloud Forest,https://www.tripadvisor.com/Attraction_Review-g294265-d4400781-Reviews-Cloud_Forest-Singapore.html,14773,4.5,Gardens,0
-7,Chinatown,https://www.tripadvisor.com/Attraction_Review-g294265-d317415-Reviews-Chinatown-Singapore.html,14282,4,Neighbourhoods,0
-8,National Orchid Garden,https://www.tripadvisor.com/Attraction_Review-g294265-d317453-Reviews-National_Orchid_Garden-Singapore.html,13705,4.5,Gardens,0
-9,Orchard Road,https://www.tripadvisor.com/Attraction_Review-g294265-d317454-Reviews-Orchard_Road-Singapore.html,13416,4,Points of Interest & Landmarks,0
+4,Singapore Flyer,https://www.tripadvisor.com/Attraction_Review-g294265-d678639-Reviews-Singapore_Flyer-Singapore.html,17298,4.5,Observation Decks & Towers,1
+5,Sands Skypark Observation Deck,https://www.tripadvisor.com/Attraction_Review-g294265-d1837767-Reviews-Sands_Skypark_Observation_Deck-Singapore.html,16787,4.5,Points of Interest & Landmarks,1
+6,Cloud Forest,https://www.tripadvisor.com/Attraction_Review-g294265-d4400781-Reviews-Cloud_Forest-Singapore.html,14773,4.5,Gardens,1
+7,Chinatown,https://www.tripadvisor.com/Attraction_Review-g294265-d317415-Reviews-Chinatown-Singapore.html,14282,4,Neighbourhoods,1
+8,National Orchid Garden,https://www.tripadvisor.com/Attraction_Review-g294265-d317453-Reviews-National_Orchid_Garden-Singapore.html,13705,4.5,Gardens,1
+9,Orchard Road,https://www.tripadvisor.com/Attraction_Review-g294265-d317454-Reviews-Orchard_Road-Singapore.html,13416,4,Points of Interest & Landmarks,1
 10,Marina Bay,https://www.tripadvisor.com/Attraction_Review-g294265-d1177497-Reviews-Marina_Bay-Singapore.html,12868,4.5,Bodies of Water,0
 11,Night Safari,https://www.tripadvisor.com/Attraction_Review-g294265-d324761-Reviews-Night_Safari-Singapore.html,12099,4,Nature & Wildlife Areas,0
 12,Merlion Park,https://www.tripadvisor.com/Attraction_Review-g294265-d644919-Reviews-Merlion_Park-Singapore.html,9495,4,Monuments & Statues,1
