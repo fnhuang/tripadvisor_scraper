@@ -86,7 +86,16 @@ class ReviewCrawler():
                 self.url = self.pages[self.pageNum]
                 # print("Visit", self.url)
                 driver.get(self.url)
+
+                time.sleep(3)
+
+                #new tripadvisor format
+                buttons = driver.find_elements_by_xpath("//span[@class='taLnk ulBlueLinks']") #click 'More's
+                buttons[0].click()
+                time.sleep(3)
+
                 response = driver.page_source
+
 
                 try:
                     self.parse_review(response, attractive_csv)
@@ -119,9 +128,36 @@ class ReviewCrawler():
         driver.quit()
 
     def parse_review (self, response, attractive_csv):
-        #response = open("raw_html/national_gallery_singapore_page2.html", "r", encoding="utf8").read()
+        #response = open("raw_html/flower_dome_page2.html", "r", encoding="utf8").read()
 
-        json_mark = "window.__WEB_CONTEXT__={pageManifest:"
+        soup = BeautifulSoup(response, 'html.parser')
+
+        #new tripadvisor format
+        containers = soup.find_all("div", {"class": "review-container"})
+        for container in containers:
+            review_title = container.findChild("span", {"class": "noQuotes"}).getText().strip()
+            review_title = re.sub('( +|\n|\t)', ' ', review_title)
+            review_content = container.findChild("p", {"class": "partial_entry"}).getText().strip()
+            review_content = re.sub('( +|\n|\t)', ' ', review_content)
+            review_language = "en"
+            review_date = container.findChild("span", {"class": "ratingDate"})["title"]
+
+            username = container.findChild("div", {"class": "info_text pointer_cursor"}).findChild("div").getText().strip()
+            location = ""
+            if container.findChild("div", {"class": "userLoc"}) != None:
+                location = container.findChild("div", {"class": "userLoc"}).getText().strip()
+            review_contribution = 0
+            if container.findChild("span", {"class": "ui_icon pencil-paper"}) != None:
+                reviewer_contribution = container.findChild("span", {"class": "ui_icon pencil-paper"}).findNext("span").getText().strip()
+            reviewer_helpfulVote = 0
+            if container.findChild("span", {"class": "ui_icon thumbs-up-fill"}) != None:
+                reviewer_helpfulVote = container.findChild("span", {"class": "ui_icon thumbs-up-fill"}).findNext("span").getText().strip()
+
+            attractive_csv.writerow([str(self.pageNum), review_title, review_content, review_language, review_date,
+                                     username, location, reviewer_contribution, reviewer_helpfulVote])
+
+        #old tripadvisor format
+        '''json_mark = "window.__WEB_CONTEXT__={pageManifest:"
         json_text = response[response.index(json_mark) + len(json_mark):]
         json_text = json_text[0:json_text.index(";(window.$WP=window.$WP||")-1]
         pageManifest = json.loads(json_text)
@@ -151,10 +187,8 @@ class ReviewCrawler():
             if location_json["locationId"] != None:
                 location = location_json["location"]["additionalNames"]["long"]
             reviewer_contribution = userProfile["contributionCounts"]["sumAllUgc"]
-            reviewer_helpfulVote = userProfile["contributionCounts"]["helpfulVote"]
+            reviewer_helpfulVote = userProfile["contributionCounts"]["helpfulVote"]'''
 
-            attractive_csv.writerow([str(self.pageNum), review_title, review_content, review_language, review_date,
-                                     username, location, reviewer_contribution, reviewer_helpfulVote])
             #print(review_title, review_content, review_language, review_date, username, location, reviewer_contribution, reviewer_helpfulVote)
 
 
@@ -238,7 +272,14 @@ class ReviewCrawler():
             reg = re.compile("or[0-9]+")
             for this_page in range(max_b4_last, self.lastPage + 1):
                 to_replace = re.findall(reg,frame)[0]
-                self.pages[this_page] = frame.replace(to_replace, "or" + str((this_page - 1) * 5))
+
+                #old tripadvisor format
+                #num = 5
+
+                #new trip advisor format
+                num = 10
+
+                self.pages[this_page] = frame.replace(to_replace, "or" + str((this_page - 1) * num))
 
 
         #print(self.pages)
@@ -319,7 +360,7 @@ class ReviewCrawler():
                 values.append("NA"); values.append("NA");
 
             for i in range(1,6):
-                id = "ReviewRatingFilter_" + str(i)
+                id = "filters_detail_checkbox_trating__" + str(i)
                 inp = soup.find("input", {"id": id})
                 num = re.sub('[^0-9]', '', inp.parent.getText())
                 values.append(num)
@@ -364,9 +405,12 @@ def get_urls(start_crawl, end_crawl):
     csv_reader = csv.DictReader(reader)
     urls = {}
     for row in csv_reader:
-        if int(row["done"]) == 0:
-            if int(row["number"]) in range(start_crawl, end_crawl):
+
+        if int(row["number"]) in range(start_crawl, end_crawl):
+            if int(row["done"]) == 0:
                 urls[int(row["number"])] = row["url"]
+            else:
+                urls[int(row["number"])] = "NA"
 
     return urls
 
@@ -381,28 +425,29 @@ if __name__ == "__main__":
 
     for number in range(start_crawl, end_crawl):
         url = urls[number]
-        start_time = datetime.datetime.now()
-        rc = ReviewCrawler(vm, url, sleep)
-        rc.crawl()
-        finish_getting_data = datetime.datetime.now()
-        if rc.pageNum % 1000 != 0:
-            sleep_time = (rc.pageNum % 1000) * 1.0 / 1000 * 600
-            print("Finish crawling", number ,"in",
-                  (finish_getting_data - start_time).seconds,
-                  "seconds. Now sleep for", sleep_time, "seconds")
-            time.sleep(sleep_time)
+        if url != "NA":
+            start_time = datetime.datetime.now()
+            rc = ReviewCrawler(vm, url, sleep)
+            rc.crawl()
+            finish_getting_data = datetime.datetime.now()
+            if rc.pageNum % 1000 != 0:
+                sleep_time = (rc.pageNum % 1000) * 1.0 / 1000 * 600
+                print("Finish crawling", number ,"in",
+                      (finish_getting_data - start_time).seconds,
+                      "seconds. Now sleep for", sleep_time, "seconds")
+                time.sleep(sleep_time)
 
-    '''start_time = datetime.datetime.now()
-    vm = int(sys.argv[1])
-    sleep = int(sys.argv[2])
-    #vm = 0; sleep = 5
+    #start_time = datetime.datetime.now()
+    #vm = int(sys.argv[1])
+    #sleep = int(sys.argv[2])
+    #vm = 0; sleep = 600
     #all_attractions_url = "https://www.tripadvisor.com/Attractions-g294265-Activities-a_allAttractions.true-Singapore.html"
-    url2 ="https://www.tripadvisor.com/Attraction_Review-g294265-d6373042-Reviews-Lower_Seletar_Reservoir-Singapore.html"
-    rc = ReviewCrawler(vm, url2, sleep)
-    rc.crawl()
+    #url2 ="https://www.tripadvisor.com/Attraction_Review-g294265-d4400784-Reviews-Flower_Dome-Singapore.html"
+    #rc = ReviewCrawler(vm, url2, sleep)
+    #rc.crawl()
     #rc.extract_additional_info("test")
     #rc.parse_review("test","test")
-    #rc.fix_reviews()'''
+    #rc.fix_reviews()
 
     '''finish_getting_data = datetime.datetime.now()  # run time
     print("Finish in", (finish_getting_data - start_time).seconds, "seconds")'''
