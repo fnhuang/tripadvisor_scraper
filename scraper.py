@@ -90,9 +90,11 @@ class ReviewCrawler():
                 time.sleep(3)
 
                 #new tripadvisor format
+
                 buttons = driver.find_elements_by_xpath("//span[@class='taLnk ulBlueLinks']") #click 'More's
-                buttons[0].click()
-                time.sleep(3)
+                if len(buttons) > 0:
+                    buttons[0].click()
+                    time.sleep(3)
 
                 response = driver.page_source
 
