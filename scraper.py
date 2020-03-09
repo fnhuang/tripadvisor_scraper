@@ -92,7 +92,7 @@ class ReviewCrawler():
                     nexts = driver.find_elements_by_xpath("//a[@class='ui_button nav next primary ']")
                     nexts[0].click()
 
-                time.sleep(3)
+                time.sleep(5)
 
                 #new tripadvisor format
 
@@ -100,7 +100,7 @@ class ReviewCrawler():
                 buttons = driver.find_elements_by_xpath("//span[contains(@class,'ExpandableReview')]")
                 if len(buttons) > 0:
                     buttons[0].click()
-                    time.sleep(3)
+                    time.sleep(5)
 
                 response = driver.page_source
 
@@ -389,8 +389,8 @@ def get_urls(start_crawl, end_crawl):
     return urls
 
 if __name__ == "__main__":
-    #rc = ReviewCrawler(0, "https://www.tripadvisor.com/Attraction_Review-g294265-d8720312-Reviews-Coney_Island_Park-Singapore.html", 0)
-    #rc.crawl()
+    rc = ReviewCrawler(0, "https://www.tripadvisor.com/Attraction_Review-g294265-d317415-Reviews-Chinatown-Singapore.html", 0)
+    rc.crawl()
     #rc.parse_review("test", "test")
 
     start_crawl = int(sys.argv[1])
