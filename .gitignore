@@ -2,3 +2,5 @@
 /raw_html/*
 !/reviews/merlion_park.csv
 /.idea/*
+additional_info.bak
+test.html
