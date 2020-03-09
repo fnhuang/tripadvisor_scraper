@@ -11,32 +11,32 @@ number,name,url,reviews,rating,tag,done,old format
 10,Marina Bay,https://www.tripadvisor.com/Attraction_Review-g294265-d1177497-Reviews-Marina_Bay-Singapore.html,12868,4.5,Bodies of Water,1,1
 11,Night Safari,https://www.tripadvisor.com/Attraction_Review-g294265-d324761-Reviews-Night_Safari-Singapore.html,12099,4,Nature & Wildlife Areas,1,1
 12,Merlion Park,https://www.tripadvisor.com/Attraction_Review-g294265-d644919-Reviews-Merlion_Park-Singapore.html,9495,4,Monuments & Statues,1,1
-13,Flower Dome,https://www.tripadvisor.com/Attraction_Review-g294265-d4400784-Reviews-Flower_Dome-Singapore.html,6423,4.5,Points of Interest & Landmarks,0,0
-14,Buddha Tooth Relic Temple and Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1438273-Reviews-Buddha_Tooth_Relic_Temple_and_Museum-Singapore.html,6390,4.5,Sacred & Religious Sites,0,0
-15,Supertree Grove,https://www.tripadvisor.com/Attraction_Review-g294265-d8634325-Reviews-Supertree_Grove-Singapore.html,5878,4.5,Observatories & Planetariums,0,0
+13,Flower Dome,https://www.tripadvisor.com/Attraction_Review-g294265-d4400784-Reviews-Flower_Dome-Singapore.html,6423,4.5,Points of Interest & Landmarks,1,0
+14,Buddha Tooth Relic Temple and Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1438273-Reviews-Buddha_Tooth_Relic_Temple_and_Museum-Singapore.html,6390,4.5,Sacred & Religious Sites,1,0
+15,Supertree Grove,https://www.tripadvisor.com/Attraction_Review-g294265-d8634325-Reviews-Supertree_Grove-Singapore.html,5878,4.5,Observatories & Planetariums,1,0
 16,Jurong Bird Park,https://www.tripadvisor.com/Attraction_Review-g294265-d315466-Reviews-Jurong_Bird_Park-Singapore.html,5168,4.5,Nature & Wildlife Areas,1,1
 17,Waterfront Promenade,https://www.tripadvisor.com/Attraction_Review-g294265-d1888876-Reviews-Waterfront_Promenade-Singapore.html,4369,4.5,Scenic Walking Areas,1,1
 18,Singapore Cable Car,https://www.tripadvisor.com/Attraction_Review-g294265-d315470-Reviews-Singapore_Cable_Car-Singapore.html,4139,4.5,Scenic Walking Areas,1,1
 19,Little India,https://www.tripadvisor.com/Attraction_Review-g294265-d324541-Reviews-Little_India-Singapore.html,4032,4,Neighbourhoods,1,1
 20,Clarke Quay,https://www.tripadvisor.com/Attraction_Review-g294265-d324756-Reviews-Clarke_Quay-Singapore.html,3354,4.5,Shopping Malls,1,1
-21,Maxwell Food Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d13078277-Reviews-Maxwell_Food_Centre-Singapore.html,3258,4,Flea & Street Markets,0,0
-22,Mustafa Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d2139541-Reviews-Mustafa_Centre-Singapore.html,3032,4,Shopping Malls,0,0
-23,River Safari,https://www.tripadvisor.com/Attraction_Review-g294265-d4089881-Reviews-River_Safari-Singapore.html,2969,4,Theme Parks,0,0
-24,The Helix Bridge,https://www.tripadvisor.com/Attraction_Review-g294265-d2138898-Reviews-The_Helix_Bridge-Singapore.html,2873,4.5,Bridges,0,0
-25,National Museum of Singapore,https://www.tripadvisor.com/Attraction_Review-g294265-d324550-Reviews-National_Museum_of_Singapore-Singapore.html,2787,4.5,Speciality Museums,0,0
-26,Battlebox,https://www.tripadvisor.com/Attraction_Review-g294265-d9859121-Reviews-Battlebox-Singapore.html,2352,5,Historic Sites,0,0
-27,Arab Street,https://www.tripadvisor.com/Attraction_Review-g294265-d324757-Reviews-Arab_Street-Singapore.html,2284,4,Neighbourhoods,0,0
-28,The Shoppes at Marina Bay Sands,https://www.tripadvisor.com/Attraction_Review-g294265-d2138910-Reviews-The_Shoppes_at_Marina_Bay_Sands-Singapore.html,2180,4.5,Shopping Malls,0,0
-29,Asian Civilisations Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d310896-Reviews-Asian_Civilisations_Museum-Singapore.html,2179,4.5,History Museums,0,0
-30,Singapore River,https://www.tripadvisor.com/Attraction_Review-g294265-d4283466-Reviews-Singapore_River-Singapore.html,2115,4.5,Bodies of Water,0,0
-31,The Changi Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d324543-Reviews-The_Changi_Museum-Singapore.html,2050,4.5,History Museums,0,0
-32,MacRitchie Nature Trail,https://www.tripadvisor.com/Attraction_Review-g294265-d386880-Reviews-MacRitchie_Nature_Trail-Singapore.html,1817,4.5,Nature & Wildlife Areas,0,0
-33,Raffles Hotel Arcade,https://www.tripadvisor.com/Attraction_Review-g294265-d1492403-Reviews-Raffles_Hotel_Arcade-Singapore.html,1714,4,Points of Interest & Landmarks,0,0
-34,ArtScience Museum at Marina Bay Sands,https://www.tripadvisor.com/Attraction_Review-g294265-d2138895-Reviews-ArtScience_Museum_at_Marina_Bay_Sands-Singapore.html,1634,4,Speciality Museums,0,0
-35,Lau Pa Sat Festival Pavilion,https://www.tripadvisor.com/Attraction_Review-g294265-d386879-Reviews-Lau_Pa_Sat_Festival_Pavilion-Singapore.html,1560,4,Flea & Street Markets,0,0
-36,VivoCity,https://www.tripadvisor.com/Attraction_Review-g294265-d634131-Reviews-VivoCity-Singapore.html,1427,4,Shopping Malls,0,0
-37,Marina Bay Sands Casino,https://www.tripadvisor.com/Attraction_Review-g294265-d1062119-Reviews-Marina_Bay_Sands_Casino-Singapore.html,1293,4,Casinos,0,0
-38,National Gallery Singapore,https://www.tripadvisor.com/Attraction_Review-g294265-d8077179-Reviews-National_Gallery_Singapore-Singapore.html,1250,4.5,Art Galleries,0,0
+21,Maxwell Food Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d13078277-Reviews-Maxwell_Food_Centre-Singapore.html,3258,4,Flea & Street Markets,1,0
+22,Mustafa Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d2139541-Reviews-Mustafa_Centre-Singapore.html,3032,4,Shopping Malls,1,0
+23,River Safari,https://www.tripadvisor.com/Attraction_Review-g294265-d4089881-Reviews-River_Safari-Singapore.html,2969,4,Theme Parks,1,0
+24,The Helix Bridge,https://www.tripadvisor.com/Attraction_Review-g294265-d2138898-Reviews-The_Helix_Bridge-Singapore.html,2873,4.5,Bridges,1,0
+25,National Museum of Singapore,https://www.tripadvisor.com/Attraction_Review-g294265-d324550-Reviews-National_Museum_of_Singapore-Singapore.html,2787,4.5,Speciality Museums,1,0
+26,Battlebox,https://www.tripadvisor.com/Attraction_Review-g294265-d9859121-Reviews-Battlebox-Singapore.html,2352,5,Historic Sites,1,0
+27,Arab Street,https://www.tripadvisor.com/Attraction_Review-g294265-d324757-Reviews-Arab_Street-Singapore.html,2284,4,Neighbourhoods,1,0
+28,The Shoppes at Marina Bay Sands,https://www.tripadvisor.com/Attraction_Review-g294265-d2138910-Reviews-The_Shoppes_at_Marina_Bay_Sands-Singapore.html,2180,4.5,Shopping Malls,1,0
+29,Asian Civilisations Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d310896-Reviews-Asian_Civilisations_Museum-Singapore.html,2179,4.5,History Museums,1,0
+30,Singapore River,https://www.tripadvisor.com/Attraction_Review-g294265-d4283466-Reviews-Singapore_River-Singapore.html,2115,4.5,Bodies of Water,1,0
+31,The Changi Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d324543-Reviews-The_Changi_Museum-Singapore.html,2050,4.5,History Museums,1,0
+32,MacRitchie Nature Trail,https://www.tripadvisor.com/Attraction_Review-g294265-d386880-Reviews-MacRitchie_Nature_Trail-Singapore.html,1817,4.5,Nature & Wildlife Areas,1,0
+33,Raffles Hotel Arcade,https://www.tripadvisor.com/Attraction_Review-g294265-d1492403-Reviews-Raffles_Hotel_Arcade-Singapore.html,1714,4,Points of Interest & Landmarks,1,0
+34,ArtScience Museum at Marina Bay Sands,https://www.tripadvisor.com/Attraction_Review-g294265-d2138895-Reviews-ArtScience_Museum_at_Marina_Bay_Sands-Singapore.html,1634,4,Speciality Museums,1,0
+35,Lau Pa Sat Festival Pavilion,https://www.tripadvisor.com/Attraction_Review-g294265-d386879-Reviews-Lau_Pa_Sat_Festival_Pavilion-Singapore.html,1560,4,Flea & Street Markets,1,0
+36,VivoCity,https://www.tripadvisor.com/Attraction_Review-g294265-d634131-Reviews-VivoCity-Singapore.html,1427,4,Shopping Malls,1,0
+37,Marina Bay Sands Casino,https://www.tripadvisor.com/Attraction_Review-g294265-d1062119-Reviews-Marina_Bay_Sands_Casino-Singapore.html,1293,4,Casinos,1,0
+38,National Gallery Singapore,https://www.tripadvisor.com/Attraction_Review-g294265-d8077179-Reviews-National_Gallery_Singapore-Singapore.html,1250,4.5,Art Galleries,1,0
 39,Boat Quay,https://www.tripadvisor.com/Attraction_Review-g294265-d317397-Reviews-Boat_Quay-Singapore.html,1236,4,Piers & Boardwalks,1,1
 40,Peranakan Museum,https://www.tripadvisor.com/Attraction_Review-g294265-d1491151-Reviews-Peranakan_Museum-Singapore.html,1233,4.5,Speciality Museums,1,1
 41,East Coast Park,https://www.tripadvisor.com/Attraction_Review-g294265-d317426-Reviews-East_Coast_Park-Singapore.html,1192,4.5,Parks,1,1
@@ -277,7 +277,7 @@ number,name,url,reviews,rating,tag,done,old format
 276,Marina Bay City Gallery,https://www.tripadvisor.com/Attraction_Review-g294265-d4355496-Reviews-Marina_Bay_City_Gallery-Singapore.html,30,3.5,Points of Interest & Landmarks,1,1
 277,Tokyu Hands,https://www.tripadvisor.com/Attraction_Review-g294265-d7086298-Reviews-Tokyu_Hands-Singapore.html,30,3,Points of Interest & Landmarks,1,1
 278,Coney Island Park,https://www.tripadvisor.com/Attraction_Review-g294265-d8720288-Reviews-Coney_Island_Park-Singapore.html,30,4,Biking Trails,1,1
-279,Asia Square Tower,https://www.tripadvisor.com/Attraction_Review-g294265-d8501414-Reviews-Asia_Square_Tower-Singapore.html,30,4,Architectural Buildings,1,1
+279,Asia Square Tower,https://www.tripadvisor.com/Attraction_Review-g294265-d8501414-Reviews-Asia_Square_Tower-Singapore.html,30,4,Architectural Buildings,0,1
 280,The Star Performing Arts Centre,https://www.tripadvisor.com/Attraction_Review-g294265-d8010605-Reviews-The_Star_Performing_Arts_Centre-Singapore.html,29,4,Theatres,1,1
 281,Seletar Mall,https://www.tripadvisor.com/Attraction_Review-g294265-d7286636-Reviews-Seletar_Mall-Singapore.html,29,4,Shopping Malls,1,1
 282,Quayside Isle,https://www.tripadvisor.com/Attraction_Review-g294265-d6482566-Reviews-Quayside_Isle-Singapore.html,29,4.5,Shopping Malls,1,1
