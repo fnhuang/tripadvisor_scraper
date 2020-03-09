@@ -71,7 +71,7 @@ class ReviewCrawler():
 
             file_name = "reviews/" + fname + ".csv"
             fieldnames = ['review_page', 'review_title', 'review_content', 'review_star', 'reviewer_location',
-                          'date_of_experience','crawled_date']
+                          'review_date','crawled_date']
             if os.path.isfile(file_name):
                 attractive_writer = open(file_name, 'a', newline="", encoding="utf8")
                 attractive_csv = csv.writer(attractive_writer)
@@ -89,24 +89,26 @@ class ReviewCrawler():
                     # print("Visit", self.url)
                     driver.get(self.url)
                 else:
-                    time.sleep(3)
                     nexts = driver.find_elements_by_xpath("//a[@class='ui_button nav next primary ']")
                     nexts[0].click()
 
-                time.sleep(3)
+                time.sleep(3)#to ensure all elements loaded
 
-                #new tripadvisor format
-
-                #buttons = driver.find_elements_by_xpath("//[@class='taLnk ulBlueLinks']") #click 'More's
                 buttons = driver.find_elements_by_xpath("//span[contains(@class,'ExpandableReview')]")
 
-                try:
-                    if len(buttons) > 0:
-                        buttons[0].click()
+                button_problem = True
+                for i in range(0, len(buttons)):
+                    try:
+                        buttons[i].click()
+                        button_problem = False
                         time.sleep(3)
+                        break
+                    except:
+                        pass
 
-                    response = driver.page_source
+                response = driver.page_source
 
+                if not button_problem:
                     try:
                         self.parse_review(response, attractive_csv)
                         attractive_writer.flush()
@@ -117,8 +119,7 @@ class ReviewCrawler():
                         writer = open("raw_html/" + file_name, "w", encoding="utf8")
                         writer.write(soup.prettify())
                         writer.close()
-                except:
-                    response = driver.page_source
+                else:
                     file_name = fname + "_page" + str(self.pageNum) + ".html"
                     soup = BeautifulSoup(response, 'html.parser')
                     writer = open("button_problem/" + file_name, "w", encoding="utf8")
@@ -154,12 +155,16 @@ class ReviewCrawler():
         containers = soup.find_all("div", {"class":re.compile("^location-review-card-Card")})
         if len(containers) > 0:
             for container in containers:
-                review_title = container.findChild("div", {"data-test-target":"review-title"}).getText().strip()
+                review_title = container.findChild("div", {"data-test-target":"review-title"})
+                review_title = review_title.getText().strip()
                 review_title = re.sub('( +|\n|\t)', ' ', review_title)
-                review_content = container.findChild("q", {"class" : re.compile(".*ExpandableReview__reviewText*.")}).getText().strip()
+                review_content = container.findChild("q", {"class" : re.compile(".*ExpandableReview__reviewText*.")})
+                review_content = review_content.getText().strip()
                 review_content = re.sub('( +|\n|\t)', ' ', review_content)
-                date_of_experience = container.findChild("span", {"class" : re.compile(".*EventDate*.")}).getText().strip()
-                date_of_experience = date_of_experience.replace("Date of experience: ","")
+                review_date = container.findChild("div", {"class" : re.compile(".*event_type*.")})
+                review_date = review_date.getText().strip()
+                review_date = re.sub('( +|\n|\t)', ' ', review_date)
+                review_date = review_date[review_date.index("wrote a review")+14:].strip()
                 review_star = container.findChild("span", {"class" : re.compile("^ui_bubble_rating")})
                 review_star = review_star["class"][1].replace("bubble_","")
                 crawled_date = datetime.datetime.now().strftime("%Y%m%d")
@@ -168,7 +173,9 @@ class ReviewCrawler():
                     reviewer_location = container.findChild("span", {"class" : re.compile(".*__hometown*.")}).getText().strip()
                 attractive_csv.writerow(
                     [str(self.pageNum), review_title, review_content, review_star, reviewer_location,
-                     date_of_experience, crawled_date])
+                     review_date, crawled_date])
+                #print(review_title, review_content, review_star, reviewer_location,
+                #     date_of_experience, crawled_date)
         else:
             print("Terminated, trip advisor format has changed again")
             sys.exit(0)
@@ -177,7 +184,7 @@ class ReviewCrawler():
 
 
 
-            #print(review_title, review_content, review_language, review_date, username, location, reviewer_contribution, reviewer_helpfulVote)
+
 
 
 
@@ -358,29 +365,31 @@ class ReviewCrawler():
         file_name = "reviews/" + fname + ".csv"
 
         flist = glob.glob("raw_html/" + fname + "*.html")
-        page_numbers = []
-        for fi in flist:
-            start_index = fi.index("_page") + 5
-            end_index = fi.rindex(".html")
-            page_numbers.append(int(fi[start_index:end_index]))
 
-        self.delete_reviews(file_name, page_numbers)
-
-        attractive_writer = open(file_name, "a", encoding="utf8", newline="")
-        csv_writer = csv.writer(attractive_writer)
-
-        for fi in flist:
-            print(fi)
-            response = open(fi, "r", encoding="utf8").read()
-            try:
+        if len(flist) > 0:
+            page_numbers = []
+            for fi in flist:
                 start_index = fi.index("_page") + 5
                 end_index = fi.rindex(".html")
-                self.pageNum = int(fi[start_index:end_index])
-                self.parse_review(response, csv_writer)
-                os.remove(fi)
-            except:
-                pass
-            #sys.exit()
+                page_numbers.append(int(fi[start_index:end_index]))
+
+            self.delete_reviews(file_name, page_numbers)
+
+            attractive_writer = open(file_name, "a", encoding="utf8", newline="")
+            csv_writer = csv.writer(attractive_writer)
+
+            for fi in flist:
+                response = open(fi, "r", encoding="utf8").read()
+                try:
+                    start_index = fi.index("_page") + 5
+                    end_index = fi.rindex(".html")
+                    self.pageNum = int(fi[start_index:end_index])
+                    self.parse_review(response, csv_writer)
+                    os.remove(fi)
+                except Exception as e:
+                    print(e)
+                    pass
+                #sys.exit()
 
 #startcrawl is 1 if you want to crawl first item "gardens by the bay"
 def get_urls(start_crawl, end_crawl):
@@ -398,9 +407,9 @@ def get_urls(start_crawl, end_crawl):
     return urls
 
 if __name__ == "__main__":
-    #rc = ReviewCrawler(0, "https://www.tripadvisor.com/Attraction_Review-g294265-d317415-Reviews-Chinatown-Singapore.html", 0)
+    #rc = ReviewCrawler(0, "https://www.tripadvisor.com/Attraction_Review-g294265-d2049172-Reviews-Geylang_Serai-Singapore.html", 0)
     #rc.crawl()
-    #rc.parse_review("test", "test")
+    #rc.fix_reviews()
 
     start_crawl = int(sys.argv[1])
     end_crawl = int(sys.argv[2])
@@ -418,7 +427,7 @@ if __name__ == "__main__":
             rc.crawl()
             finish_getting_data = datetime.datetime.now()
             if rc.pageNum % 1000 != 0:
-                sleep_time = (rc.pageNum % 1000) * 1.0 / 1000 * 600
+                sleep_time = (rc.pageNum % 1000) * 1.0 / 1000 * sleep
                 print("Finish crawling", number ,"in",
                       (finish_getting_data - start_time).seconds,
                       "seconds. Now sleep for", sleep_time, "seconds")
