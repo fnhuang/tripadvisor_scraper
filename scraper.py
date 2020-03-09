@@ -89,30 +89,39 @@ class ReviewCrawler():
                     # print("Visit", self.url)
                     driver.get(self.url)
                 else:
+                    time.sleep(3)
                     nexts = driver.find_elements_by_xpath("//a[@class='ui_button nav next primary ']")
                     nexts[0].click()
 
-                time.sleep(5)
+                time.sleep(3)
 
                 #new tripadvisor format
 
                 #buttons = driver.find_elements_by_xpath("//[@class='taLnk ulBlueLinks']") #click 'More's
                 buttons = driver.find_elements_by_xpath("//span[contains(@class,'ExpandableReview')]")
-                if len(buttons) > 0:
-                    buttons[0].click()
-                    time.sleep(5)
-
-                response = driver.page_source
-
 
                 try:
-                    self.parse_review(response, attractive_csv)
-                    attractive_writer.flush()
+                    if len(buttons) > 0:
+                        buttons[0].click()
+                        time.sleep(3)
+
+                    response = driver.page_source
+
+                    try:
+                        self.parse_review(response, attractive_csv)
+                        attractive_writer.flush()
+                    except:
+                        # dump the file if file cannot be parsed properly
+                        file_name = fname + "_page" + str(self.pageNum) + ".html"
+                        soup = BeautifulSoup(response, 'html.parser')
+                        writer = open("raw_html/" + file_name, "w", encoding="utf8")
+                        writer.write(soup.prettify())
+                        writer.close()
                 except:
-                    # dump the file if file cannot be parsed properly
+                    response = driver.page_source
                     file_name = fname + "_page" + str(self.pageNum) + ".html"
                     soup = BeautifulSoup(response, 'html.parser')
-                    writer = open("raw_html/" + file_name, "w", encoding="utf8")
+                    writer = open("button_problem/" + file_name, "w", encoding="utf8")
                     writer.write(soup.prettify())
                     writer.close()
 

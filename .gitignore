@@ -1,5 +1,6 @@
 /reviews/*
 /raw_html/*
+/button_problem/*
 !/reviews/merlion_park.csv
 /.idea/*
 additional_info.bak
