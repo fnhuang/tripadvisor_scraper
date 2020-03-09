@@ -121,7 +121,8 @@ class ReviewCrawler():
                     #self.extract_additional_info(response)
 
                 #print(self.pages.keys())
-                print("Finish getting page", self.pageNum)
+                #print("Finish getting page", self.pageNum)
+
                 if self.pageNum % 1000 != 0:
                     print("Finish getting page", self.pageNum,
                           "for attraction", fname, end='\r')
