@@ -19,6 +19,10 @@ class ReviewCrawler():
         self.lastPage = 1000000
         self.home = self.url[0:url.index(".com/") + 4]
         self.sleep_time = sleep_time #in seconds
+        self.extract_additional_info_only = False
+
+    def set_extract_additional_info_only(self, extract_additional_info_only):
+        self.extract_additional_info_only = extract_additional_info_only
 
     def crawl(self):
         #set up selenium
@@ -38,6 +42,7 @@ class ReviewCrawler():
             driver = webdriver.Chrome("C:\Program Files (x86)\Google\Chrome\chromedriver", options=options)
 
         #driver = webdriver.PhantomJS("C:\Program Files (x86)\Google\Chrome\phantomjs")
+
 
         #links to reviews, not the reviews
         if "allAttractions" in self.url:
@@ -65,6 +70,16 @@ class ReviewCrawler():
                       (finish_getting_data - start_time).seconds, "seconds")
                 time.sleep(self.sleep_time)
                 self.pageNum += 1
+        elif self.extract_additional_info_only == True:
+
+            self.url = self.pages[self.pageNum]
+            driver.get(self.url)
+
+            response = driver.page_source
+
+            self.extract_additional_info(response)
+
+            time.sleep(self.sleep_time)
         else:
             name_array = self.url[self.url.rindex("/"):].split("-")
             fname = name_array[len(name_array) - 2].lower()
@@ -179,13 +194,6 @@ class ReviewCrawler():
         else:
             print("Terminated, trip advisor format has changed again")
             sys.exit(0)
-
-
-
-
-
-
-
 
 
     def parse(self, response):
@@ -345,15 +353,18 @@ class ReviewCrawler():
                     longitude = location_data["longitude"]
                     values.append(latitude); values.append(longitude)
                 except:
-                    values.append("NA"); values.append("NA");
+                    values.append("NA"); values.append("NA")
             else:
                 values.append("NA"); values.append("NA");
 
             for i in range(1,6):
-                id = "filters_detail_checkbox_trating__" + str(i)
-                inp = soup.find("input", {"id": id})
-                num = re.sub('[^0-9]', '', inp.parent.getText())
-                values.append(num)
+                try:
+                    id = "filters_detail_checkbox_trating__" + str(i)
+                    inp = soup.find("input", {"id": id})
+                    num = re.sub('[^0-9]', '', inp.parent.getText())
+                    values.append(num)
+                except:
+                    values.append("NA")
 
             attractive_csv.writerow(values)
 
@@ -392,8 +403,8 @@ class ReviewCrawler():
                 #sys.exit()
 
 #startcrawl is 1 if you want to crawl first item "gardens by the bay"
-def get_urls(start_crawl, end_crawl):
-    reader = open("top300.csv", "r", encoding="utf8")
+def get_urls(start_crawl, end_crawl, file_name):
+    reader = open(file_name, "r", encoding="utf8")
     csv_reader = csv.DictReader(reader)
     urls = {}
     for row in csv_reader:
@@ -411,19 +422,24 @@ if __name__ == "__main__":
     #rc.crawl()
     #rc.fix_reviews()
 
-    start_crawl = int(sys.argv[1])
-    end_crawl = int(sys.argv[2])
+    #start_crawl = int(sys.argv[1])
+    #end_crawl = int(sys.argv[2])
+    start_crawl = 2
+    end_crawl = 505
 
-    urls = get_urls(start_crawl, end_crawl)
+    urls = get_urls(start_crawl, end_crawl, "bottom500.csv")
 
-    vm = int(sys.argv[3])
-    sleep = int(sys.argv[4])
+    #vm = int(sys.argv[3])
+    #sleep = int(sys.argv[4])
+    vm = 0
+    sleep = 3
 
     for number in range(start_crawl, end_crawl):
         url = urls[number]
         if url != "NA":
             start_time = datetime.datetime.now()
             rc = ReviewCrawler(vm, url, sleep)
+            rc.extract_additional_info_only = True
             rc.crawl()
             finish_getting_data = datetime.datetime.now()
             if rc.pageNum % 1000 != 0:

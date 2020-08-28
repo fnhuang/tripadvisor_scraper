@@ -1,4 +1,5 @@
 /reviews/*
+/reviews_no_rating/*
 /raw_html/*
 /button_problem/*
 !/reviews/merlion_park.csv
